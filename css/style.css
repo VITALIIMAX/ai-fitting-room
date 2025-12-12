@@ -651,6 +651,12 @@ img {
     font-weight: 600;
 }
 
+.hero__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
 /* Buttons upgrade */
 .btn {
     position: relative;
@@ -864,10 +870,11 @@ img {
     .hero__image-wrapper {
         width: 100%;
         max-width: 400px;
+        margin-top: 40px; /* Уменьшили отступ сверху (было 60px на десктопе, авто-наследование) */
     }
     
     .hero__image {
-        transform: rotate(0);
+        transform: rotate(-3deg); /* Вернули наклон как на десктопе */
     }
 }
 
@@ -2112,5 +2119,172 @@ img {
 @media (max-width: 992px) {
     .pricing-pagination {
         display: flex;
+    }
+}
+
+/* Mobile Typography & Layout Fixes */
+@media (max-width: 576px) {
+    /* Stack buttons in hero */
+    .hero__actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .hero__actions .btn {
+        width: 100%;
+    }
+
+    /* Reduce font sizes for readability */
+    .hero__title {
+        font-size: clamp(28px, 10vw, 42px); /* Адаптивный шрифт: минимум 28px, максимум 42px */
+        margin-bottom: 24px;
+        line-height: 1.1;
+        white-space: normal;
+    }
+    
+    .hero__title br {
+        display: none; /* Убираем принудительный перенос <br>, чтобы текст тек сам */
+    }
+
+    .hero__subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .section__title {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    /* Adjust padding in hero */
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 40px;
+    }
+
+    /* Fix container padding */
+    .container {
+        padding: 0 20px;
+    }
+    
+    .product-card__title {
+        font-size: 20px;
+    }
+
+    .pricing-card__price {
+        font-size: 28px;
+    }
+
+    /* Global Text Adjustments */
+    p, li, .product-card__desc, .review-card__text {
+        font-size: 15px; /* Немного уменьшаем основной текст */
+        line-height: 1.5;
+    }
+
+    /* Tabs Section */
+    .tabs-nav {
+        gap: 8px;
+    }
+    
+    .tabs-nav__btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .tab-pane h3 {
+        font-size: 22px;
+    }
+
+    .tab-pane p {
+        font-size: 16px;
+    }
+
+    /* Products Section */
+    .product-card__tag {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+
+    .product-stat__value {
+        font-size: 16px;
+    }
+    
+    .product-stat__label {
+        font-size: 10px;
+    }
+
+    /* About Section */
+    .about-stat strong {
+        font-size: 32px;
+    }
+    
+    .text-lg {
+        font-size: 18px;
+    }
+
+    /* FAQ Section */
+    .faq-question {
+        font-size: 16px;
+        padding: 20px 0;
+    }
+
+    .faq-answer p {
+        font-size: 15px;
+    }
+
+    /* Ticker */
+    .ticker__item {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    /* Contact Section */
+    .contact-wrapper {
+        gap: 40px;
+    }
+
+    .contact-form-wrapper {
+        padding: 24px 20px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 0 30px;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .footer__title {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .footer__logo {
+        font-size: 14px;
+    }
+
+    /* Mobile Header Adjustments */
+    .header {
+        top: 20px; /* Опустили чуть ниже */
+        width: calc(100% - 30px);
+        padding: 14px 10px;
+        border-radius: 100px;
+    }
+
+    .header__logo {
+        font-size: 15px;
+        padding: 6px 14px;
+    }
+    
+    /* Fix sticky overlap */
+    .header.is-sticky {
+        top: 20px;
     }
 }
