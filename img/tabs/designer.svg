@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5566FF;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#5566FF;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Shape -->
+  <path d="M400,200 Q450,100 300,50 T100,100 T50,250 T200,350 T400,200" fill="url(#grad1)" />
+
+  <!-- Clothing Rack -->
+  <rect x="50" y="80" width="10" height="250" rx="5" fill="#333" />
+  <rect x="440" y="80" width="10" height="250" rx="5" fill="#333" />
+  <rect x="50" y="80" width="400" height="10" rx="5" fill="#333" />
+  
+  <!-- Hangers and Clothes -->
+  <!-- Item 1 (Dress) -->
+  <path d="M120,90 L100,110 L140,110 Z" fill="#999" />
+  <path d="M100,110 L90,130 L150,130 L140,110 Z" fill="#5566FF" /> <!-- Top -->
+  <path d="M90,130 L70,300 L170,300 L150,130 Z" fill="#5566FF" opacity="0.8" /> <!-- Skirt -->
+
+  <!-- Item 2 (Shirt) -->
+  <path d="M220,90 L200,110 L240,110 Z" fill="#999" />
+  <rect x="190" y="110" width="60" height="100" rx="5" fill="#333" opacity="0.1" /> <!-- Placeholder shape behind -->
+  <path d="M190,110 L190,200 L250,200 L250,110 Z" fill="#4455EE" /> 
+
+  <!-- Item 3 (Jacket) -->
+  <path d="M320,90 L300,110 L340,110 Z" fill="#999" />
+  <path d="M290,110 L290,220 L350,220 L350,110 Z" fill="#333" />
+
+  <!-- Character (Designer/Stylist) -->
+  <!-- Head -->
+  <circle cx="380" cy="150" r="30" fill="#333" />
+  <!-- Body -->
+  <path d="M350,180 Q350,250 340,350 L420,350 Q410,250 410,180 Z" fill="#5566FF" />
+  <!-- Arm pointing -->
+  <path d="M350,200 L300,220" stroke="#333" stroke-width="10" stroke-linecap="round" />
+</svg>

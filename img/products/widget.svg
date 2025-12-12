@@ -1,0 +1,47 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="600" fill="#F5F5F7"/>
+    <defs>
+        <linearGradient id="screen_grad" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E0E7FF"/>
+            <stop offset="1" stop-color="#EEF2FF"/>
+        </linearGradient>
+        <linearGradient id="btn_grad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#5566FF"/>
+            <stop offset="1" stop-color="#4455EE"/>
+        </linearGradient>
+        <filter id="shadow" x="-50" y="-50" width="900" height="700" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#5566FF" flood-opacity="0.15"/>
+        </filter>
+    </defs>
+    
+    <!-- Laptop Base -->
+    <g filter="url(#shadow)">
+        <rect x="150" y="120" width="500" height="320" rx="20" fill="white"/>
+        <path d="M100 440H700L660 480H140L100 440Z" fill="#D1D5DB"/>
+        <rect x="150" y="120" width="500" height="320" rx="20" stroke="#E5E7EB" stroke-width="2"/>
+    </g>
+
+    <!-- Screen Content -->
+    <rect x="170" y="140" width="460" height="280" rx="10" fill="url(#screen_grad)"/>
+    
+    <!-- UI Elements -->
+    <rect x="190" y="160" width="140" height="200" rx="8" fill="white" opacity="0.8"/>
+    <rect x="200" y="170" width="120" height="120" rx="4" fill="#E0E7FF"/>
+    <rect x="200" y="300" width="80" height="8" rx="4" fill="#CBD5E1"/>
+    <rect x="200" y="315" width="60" height="8" rx="4" fill="#CBD5E1"/>
+
+    <rect x="350" y="160" width="260" height="40" rx="8" fill="white" opacity="0.8"/>
+    <rect x="350" y="210" width="120" height="150" rx="8" fill="white" opacity="0.8"/>
+    <rect x="490" y="210" width="120" height="150" rx="8" fill="white" opacity="0.8"/>
+
+    <!-- Widget Pop-up (Hero) -->
+    <g filter="url(#shadow)">
+        <rect x="420" y="250" width="240" height="160" rx="16" fill="white"/>
+        <rect x="420" y="250" width="240" height="160" rx="16" stroke="#5566FF" stroke-width="4"/>
+        <circle cx="540" cy="310" r="30" fill="#E0E7FF"/>
+        <path d="M540 295L550 315H530L540 295Z" fill="#5566FF"/>
+        <rect x="450" y="360" width="180" height="30" rx="15" fill="url(#btn_grad)"/>
+        <!-- Text removed to avoid encoding issues, replaced with icon-like lines -->
+        <rect x="500" y="372" width="80" height="6" rx="3" fill="white"/>
+    </g>
+</svg>

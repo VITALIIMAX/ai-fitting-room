@@ -1,0 +1,49 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="600" fill="#F5F5F7"/>
+    <defs>
+        <radialGradient id="lens_grad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(400 300) rotate(90) scale(150)">
+            <stop stop-color="#4B5563"/>
+            <stop offset="1" stop-color="#1F2937"/>
+        </radialGradient>
+        <linearGradient id="flash_grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFFFFF"/>
+            <stop offset="1" stop-color="#E0E7FF"/>
+        </linearGradient>
+        <filter id="shadow_studio" x="-50" y="-50" width="900" height="700" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="20" stdDeviation="40" flood-color="#000000" flood-opacity="0.2"/>
+        </filter>
+    </defs>
+
+    <!-- Studio Backdrop -->
+    <path d="M100 500L200 100H600L700 500H100Z" fill="#FFFFFF" opacity="0.5"/>
+
+    <!-- Camera Body -->
+    <g filter="url(#shadow_studio)">
+        <rect x="250" y="200" width="300" height="200" rx="20" fill="#374151"/>
+        <rect x="350" y="160" width="100" height="40" rx="5" fill="#374151"/>
+    </g>
+
+    <!-- Lens -->
+    <circle cx="400" cy="300" r="80" fill="#1F2937" stroke="#4B5563" stroke-width="4"/>
+    <circle cx="400" cy="300" r="60" fill="url(#lens_grad)"/>
+    <circle cx="420" cy="280" r="15" fill="white" opacity="0.1"/>
+    <circle cx="380" cy="320" r="5" fill="white" opacity="0.3"/>
+
+    <!-- Flash / AI Sparkles -->
+    <g transform="translate(500, 180)">
+        <path d="M20 0L25 15L40 20L25 25L20 40L15 25L0 20L15 15L20 0Z" fill="#5566FF"/>
+    </g>
+    <g transform="translate(280, 380)">
+        <path d="M10 0L12 7L20 10L12 13L10 20L8 13L0 10L8 7L10 0Z" fill="#5566FF"/>
+    </g>
+
+    <!-- Photo Stack (Generated Images) -->
+    <g transform="rotate(10 650 350)">
+        <rect x="600" y="300" width="120" height="150" rx="8" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+        <rect x="610" y="310" width="100" height="100" rx="4" fill="#E0E7FF"/>
+    </g>
+    <g transform="rotate(-5 150 350)">
+        <rect x="100" y="300" width="120" height="150" rx="8" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+        <rect x="110" y="310" width="100" height="100" rx="4" fill="#E0E7FF"/>
+    </g>
+</svg>
