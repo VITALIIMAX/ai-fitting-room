@@ -1478,6 +1478,12 @@ img {
         scrollbar-width: none; 
     }
     
+    .pricing-pane.is-dragging {
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        user-select: none;
+    }
+    
     .pricing-pane.is-active::-webkit-scrollbar {
         display: none;
     }

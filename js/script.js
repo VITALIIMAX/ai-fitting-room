@@ -285,10 +285,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* --- Mobile Pricing Carousel Dots --- */
+    /* --- Mobile Pricing Carousel Dots & Drag-to-Scroll --- */
     const pricingPagination = document.querySelector('.pricing-pagination');
+    // pricingPanes уже объявлен выше, используем существующую переменную
+    
+    // Drag-to-Scroll Logic
+    if (pricingPanes.length > 0) {
+        pricingPanes.forEach(pane => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        pane.addEventListener('mousedown', (e) => {
+            isDown = true;
+            pane.classList.add('is-dragging');
+            startX = e.pageX - pane.offsetLeft;
+            scrollLeft = pane.scrollLeft;
+            pane.style.cursor = 'grabbing';
+        });
+
+        pane.addEventListener('mouseleave', () => {
+            isDown = false;
+            pane.classList.remove('is-dragging');
+            pane.style.cursor = 'grab';
+        });
+
+        pane.addEventListener('mouseup', () => {
+            isDown = false;
+            pane.classList.remove('is-dragging');
+            pane.style.cursor = 'grab';
+        });
+
+        pane.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - pane.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll-fast
+            pane.scrollLeft = scrollLeft - walk;
+        });
+        
+        // Initial cursor style
+        pane.style.cursor = 'grab';
+    });
+    }
+
     if (pricingPagination) {
-        const pricingPanes = document.querySelectorAll('.pricing-pane');
         const dots = pricingPagination.querySelectorAll('.pricing-dot');
 
         function updateDots(scrollLeft, cardWidth) {
